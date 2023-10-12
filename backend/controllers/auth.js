@@ -12,7 +12,7 @@ const JWT_SECRET = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxMjM0NTY3ODk
 
 exports.signup = async (req, res) => {
     const { firstName, lastName, state, city, emailId, password, isAdmin, profilePicture } = req.body;
-    console.log(firstName, lastName, emailId, password, isAdmin, profilePicture)
+
 
     if (!firstName || !lastName || !emailId || !password || !state || !city) {
         return res.status(400).json({ msg: "Please Enter all the Fields" });
