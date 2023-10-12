@@ -5,10 +5,6 @@ import { useNavigate } from 'react-router-dom';
 import Footer from "../../Footer/footer";
 import Home from "./home";
 
-import {
-    Stack,
-    Select
-} from '@chakra-ui/react'
 
 const Homepage = () => {
     const navigate = useNavigate();
