@@ -2,7 +2,7 @@ import react, { useEffect } from "react"
 import Header from "../../Header/Header";
 
 import { useNavigate } from 'react-router-dom';
-// import Footer from "../../Footer/footer";
+import Footer from "../../Footer/footer";
 import Home from "./home";
 
 import {
@@ -24,7 +24,7 @@ const Homepage = () => {
         <>
             <Header />
             <Home />
-            {/* <Footer /> */}
+            <Footer />
         </>
     )
 }
