@@ -1,5 +1,5 @@
 import react, { useEffect } from "react"
-// import Header from "../../Header/Header";
+import Header from "../../Header/Header";
 
 import { useNavigate } from 'react-router-dom';
 // import Footer from "../../Footer/footer";
@@ -16,13 +16,13 @@ const Homepage = () => {
     const user = userInfo ? userInfo.User : null
     const path = window.location.pathname;
 
-    // useEffect(() => {
-    //     if (!user) navigate('/login')
-    // }, [user])
+    useEffect(() => {
+        if (!user) navigate('/login')
+    }, [user])
 
     return (
         <>
-            {/* <Header /> */}
+            <Header />
             <Home />
             {/* <Footer /> */}
         </>

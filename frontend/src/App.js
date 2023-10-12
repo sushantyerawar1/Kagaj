@@ -9,7 +9,6 @@ function App() {
       <Routes>
         <Route path="/" element={<Homepage />} exact />
       </Routes>
-
     </BrowserRouter>
   );
 }
