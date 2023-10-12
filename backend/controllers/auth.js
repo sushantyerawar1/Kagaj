@@ -119,7 +119,7 @@ exports.forgotpassword = async (req, res) => {
 
             var mailOptions = {
                 from: 'youremail@gmail.com',
-                to: 'covidshield146@gmail.com',
+                to: emailId,
                 subject: 'Password Reset',
                 text: link
             };
