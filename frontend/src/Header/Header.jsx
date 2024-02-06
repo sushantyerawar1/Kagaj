@@ -107,6 +107,21 @@ const Header = () => {
                             ) : null
                         }
                         {
+                            (user && isAdmin) ? (
+                                <Box as="a" href={'/search_by_place'}
+                                    _hover={{
+                                        color: "white",
+                                        borderRadius: '5',
+                                        backgroundColor: "gray"
+                                    }}
+                                    color={path == "/search_by_place" ? "green" : null}
+                                    padding={2}
+                                >
+                                    Search By Place
+                                </Box>
+                            ) : null
+                        }
+                        {
                             (user && !isAdmin) ? (
                                 <Box as="a" href={'/issue'}
                                     _hover={{

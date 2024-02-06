@@ -91,21 +91,23 @@ const SignUp = () => {
                     "emailId": email,
                     "password": password,
                     "isAdmin": isadmin,
-                    "profilePicture": pic
+                    "profilePicture": pic,
+                    "isverified": false,
+                    "isVerifiedByAdmin": false
                 },
                 config
             );
 
             toast({
-                title: "Account Created Successfully",
+                title: "Please Verify Account",
                 status: "success",
                 duration: 5000,
                 isClosable: true,
                 position: "bottom",
             });
 
-            localStorage.setItem("userInfo", JSON.stringify(data));
-            setTimeout(() => { navigate("/") }, 500);
+            // localStorage.setItem("userInfo", JSON.stringify(data));
+            setTimeout(() => { navigate("/verifymail") }, 500);
 
         } catch (error) {
 
@@ -290,8 +292,8 @@ const SignUp = () => {
                             </Stack>
                         </Stack>
                     </Box>
-                </Stack >
-            </Flex >
+                </Stack>
+            </Flex>
             <Footer />
         </>
     )

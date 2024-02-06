@@ -39,6 +39,14 @@ const userSchema = new mongoose.Schema({
         type: Boolean,
         required: true,
     },
+    isverified: {
+        type: Boolean,
+        required: true,
+    },
+    isVerifiedByAdmin: {
+        type: Boolean,
+        required: true,
+    },
     profilePicture: {
         type: String,
         default: "https://icon-library.com/images/anonymous-avatar-icon/anonymous-avatar-icon-25.jpg",

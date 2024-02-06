@@ -48,6 +48,8 @@ const Issue = () => {
                     "filename": filename,
                     "description": description,
                     "status": "pending",
+                    "state": user?.state,
+                    "city": user?.city,
                     'link': ''
                 },
                 config

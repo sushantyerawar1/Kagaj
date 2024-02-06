@@ -8,10 +8,10 @@ const Issue = require("../models/issue")
 exports.createissue = async (req, res) => {
 
 
-    const { username, emailId, filename, description, status, link } = req.body;
-    console.log(username, emailId, filename, description)
+    const { username, emailId, filename, description, status, state, city, link } = req.body;
 
-    if (!username || !emailId || !filename || !description) {
+
+    if (!username || !emailId || !filename || !description || !state || !city) {
         return res.status(400).json({ msg: "Please Enter all the Fields" });
     }
 
@@ -28,6 +28,8 @@ exports.createissue = async (req, res) => {
             filename,
             description,
             status,
+            state,
+            city,
             link
 
         });
@@ -84,6 +86,52 @@ exports.GetAllByEmail = async (req, res) => {
 
     try {
         const issue = await Issue.find({ emailId: emailid });
+
+        if (issue) {
+
+            return res.status(201).json({
+                msg: "Issue fetched Successfully",
+                Issue: issue
+            });
+        } else {
+            return res.status(400).send("Unable to Fetch Issues");
+        }
+
+    } catch (error) {
+        console.log("error found")
+    }
+
+};
+
+exports.GetAllByState = async (req, res) => {
+
+    const { state } = req.body;
+
+    try {
+        const issue = await Issue.find({ state: state });
+
+        if (issue) {
+
+            return res.status(201).json({
+                msg: "Issue fetched Successfully",
+                Issue: issue
+            });
+        } else {
+            return res.status(400).send("Unable to Fetch Issues");
+        }
+
+    } catch (error) {
+        console.log("error found")
+    }
+
+};
+exports.GetAllByCity = async (req, res) => {
+
+    const { city } = req.body;
+    console.log(city)
+
+    try {
+        const issue = await Issue.find({ city: city });
 
         if (issue) {
 

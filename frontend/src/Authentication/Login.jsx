@@ -85,16 +85,35 @@ const Login = () => {
             );
 
 
+            if (data.msg == "Please Verify Mail") {
+                toast({
+                    title: data.msg,
+                    status: "error",
+                    duration: 5000,
+                    isClosable: true,
+                    position: "bottom",
+                });
+            } else if (data.msg == "Your account is not approved by admin") {
+                toast({
+                    title: data.msg,
+                    status: "error",
+                    duration: 5000,
+                    isClosable: true,
+                    position: "bottom",
+                });
+            }
+            else {
+                toast({
+                    title: "Login Successful",
+                    status: "success",
+                    duration: 5000,
+                    isClosable: true,
+                    position: "bottom",
+                });
+                localStorage.setItem("userInfo", JSON.stringify(data));
+                setTimeout(() => { navigate("/") }, 500);
+            }
 
-            toast({
-                title: "Login Successful",
-                status: "success",
-                duration: 5000,
-                isClosable: true,
-                position: "bottom",
-            });
-            localStorage.setItem("userInfo", JSON.stringify(data));
-            setTimeout(() => { navigate("/") }, 500);
 
         } catch (error) {
             toast({
@@ -289,8 +308,8 @@ const Login = () => {
                             </Stack>
                         </Stack>
                     </Box>
-                </Stack >
-            </Flex >
+                </Stack>
+            </Flex>
 
             <Footer />
         </>

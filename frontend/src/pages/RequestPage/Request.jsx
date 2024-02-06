@@ -280,7 +280,6 @@ const Request = () => {
                 {total_requests ?
                     <TableContainer>
                         <Table variant='simple'>
-
                             <Thead>
                                 <Tr>
                                     <Th>Index</Th>
