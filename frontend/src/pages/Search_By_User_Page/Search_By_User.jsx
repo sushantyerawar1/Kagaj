@@ -178,7 +178,7 @@ const SearchByUser = () => {
                                                     <Td>{issue.emailId}</Td>
                                                     <Td>{issue.username}</Td>
                                                     <Td>{issue.filename}</Td>
-                                                    <Td><Box backgroundColor={"yellow.200"} padding={2} borderRadius={4} w={"45%"}>Pending</Box></Td>
+                                                    <Td><Box backgroundColor={"yellow.200"} padding={2} borderRadius={4} w={"60%"}>Pending</Box></Td>
                                                 </Tr> : null
                                             )
                                         ))
@@ -222,7 +222,7 @@ const SearchByUser = () => {
                                                             </Link>
                                                         </Text>
                                                     </Td>
-                                                    <Td><Box backgroundColor={"green.200"} padding={2} borderRadius={4} w={"40%"}>Submitted</Box></Td>
+                                                    <Td><Box backgroundColor={"green.200"} padding={2} borderRadius={4} w={"60%"}>Submitted</Box></Td>
                                                 </Tr> : null
                                             )
                                         ))}
@@ -258,7 +258,7 @@ const SearchByUser = () => {
                                                         <Td>{issue.emailId}</Td>
                                                         <Td>{issue.username}</Td>
                                                         <Td>{issue.filename}</Td>
-                                                        <Td><Box backgroundColor={"red.200"} padding={2} borderRadius={4} width={"40%"}>Rejected</Box></Td>
+                                                        <Td><Box backgroundColor={"red.200"} padding={2} borderRadius={4} width={"60%"}>Rejected</Box></Td>
                                                     </Tr> : null
                                             )
                                         ))}

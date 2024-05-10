@@ -309,7 +309,7 @@ const Request = () => {
                                                     <Td><Input type="file" accept=".pdf" padding={2} width="60%" onChange={(e) => { handleFileChange(e, issue._id) }}></Input></Td>
                                                     <Td><Button onClick={handleUpload}>submit</Button></Td>
                                                     <Td><Button onClick={() => { RejectIssue(issue._id) }}>Reject</Button></Td></> :
-                                                <Td><Box backgroundColor={"yellow.200"} padding={2} borderRadius={4} w={"50%"}>Pending</Box></Td>
+                                                <Td><Box backgroundColor={"yellow.200"} padding={2} borderRadius={4} w={"55%"}>Pending</Box></Td>
                                             }
                                         </Tr> : null
                                     )
@@ -355,7 +355,7 @@ const Request = () => {
                                                 </Text>
 
                                             </Td>
-                                            <Td><Box backgroundColor={"green.200"} padding={2} borderRadius={4} w={"40%"}>Submitted</Box></Td>
+                                            <Td><Box backgroundColor={"green.200"} padding={2} borderRadius={4} w={"60%"}>Submitted</Box></Td>
                                         </Tr> : null
                                     )
                                 ))}
@@ -390,7 +390,7 @@ const Request = () => {
                                                 <Td>{issue.emailId}</Td>
                                                 <Td>{issue.username}</Td>
                                                 <Td>{issue.filename}</Td>
-                                                <Td><Box backgroundColor={"red.200"} padding={2} borderRadius={4} width={"40%"}>Rejected</Box></Td>
+                                                <Td><Box backgroundColor={"red.200"} padding={2} borderRadius={4} width={"60%"}>Rejected</Box></Td>
                                             </Tr> : null
                                     )
                                 ))}

@@ -81,7 +81,20 @@ const SignUp = () => {
                 },
             };
 
-            const { data } = await axios.post(
+            console.log({
+                "firstName": firstName,
+                "lastName": lastName,
+                "state": state,
+                "city": city,
+                "emailId": email,
+                "password": password,
+                "isAdmin": isadmin,
+                "profilePicture": pic,
+                "isverified": false,
+                "isVerifiedByAdmin": false
+            })
+
+            const { data, status } = await axios.post(
                 "http://localhost:5000/api/auth/signup",
                 {
                     "firstName": firstName,
@@ -98,16 +111,28 @@ const SignUp = () => {
                 config
             );
 
-            toast({
-                title: "Please Verify Account",
-                status: "success",
-                duration: 5000,
-                isClosable: true,
-                position: "bottom",
-            });
 
             // localStorage.setItem("userInfo", JSON.stringify(data));
-            setTimeout(() => { navigate("/verifymail") }, 500);
+            if (status == 202) {
+                toast({
+                    // title: "Error Occured!",
+                    description: data.msg,
+                    status: "success",
+                    duration: 5000,
+                    isClosable: true,
+                    position: "bottom",
+                });
+            } else {
+                toast({
+                    title: "Please Verify Account",
+                    status: "success",
+                    duration: 5000,
+                    isClosable: true,
+                    position: "bottom",
+                });
+
+                setTimeout(() => { navigate("/verifymail") }, 500);
+            }
 
         } catch (error) {
 

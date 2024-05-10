@@ -75,7 +75,7 @@ const Login = () => {
                 },
             };
 
-            const { data } = await axios.post(
+            const { data, status } = await axios.post(
                 "http://localhost:5000/api/auth/login",
                 {
                     "emailId": email,
@@ -93,7 +93,16 @@ const Login = () => {
                     isClosable: true,
                     position: "bottom",
                 });
-            } else if (data.msg == "Your account is not approved by admin") {
+            } else if (data.msg == "Your account is not approved by admin.") {
+                toast({
+                    title: data.msg,
+                    description: data.note,
+                    status: "error",
+                    duration: 5000,
+                    isClosable: true,
+                    position: "bottom",
+                });
+            } else if (data.msg == "User Not Found") {
                 toast({
                     title: data.msg,
                     status: "error",
