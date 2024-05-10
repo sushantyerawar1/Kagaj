@@ -97,7 +97,7 @@ exports.signup = async (req, res) => {
     const userExists = await User.findOne({ emailId });
 
     if (userExists) {
-        return res.status(400).json({ msg: "User already exist" });
+        return res.status(202).json({ msg: "User already exist" });
     }
 
     const hashPassword = await bcrypt.hash(password, 10);
@@ -109,7 +109,7 @@ exports.signup = async (req, res) => {
         emailId,
         hashPassword,
         isAdmin,
-        profilePicture,
+        // profilePicture?"https://icon-library.com/images/anonymous-avatar-icon/anonymous-avatar-icon-25.jpg": profilePicture,
         isverified,
         isVerifiedByAdmin
     });
@@ -170,13 +170,13 @@ exports.login = async (req, res) => {
             return res.status(400).json({ msg: "Invalid mail or password" });
         }
 
-    } else if (user.isverified == false) {
+    } else if (user && user?.isverified == false) {
         return res.status(200).json({ msg: "Please Verify Mail" });
-    } else if (user.isVerifiedByAdmin == false) {
-        return res.status(200).json({ msg: "Your account is not approved by admin" });
+    } else if (user && user?.isVerifiedByAdmin == false) {
+        return res.status(200).json({ msg: "Your account is not approved by admin.", note: "Please send mail on admin@panchayat.ac.in for requesting him to verify your mail" });
     }
     else {
-        return res.status(400).json({ msg: "User Not Found" });
+        return res.status(201).json({ msg: "User Not Found" });
     }
 };
 

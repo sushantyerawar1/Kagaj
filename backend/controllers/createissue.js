@@ -9,6 +9,7 @@ exports.createissue = async (req, res) => {
 
 
     const { username, emailId, filename, description, status, state, city, link } = req.body;
+    console.log(req.body)
 
 
     if (!username || !emailId || !filename || !description || !state || !city) {
@@ -17,9 +18,9 @@ exports.createissue = async (req, res) => {
 
     const file = await Issue.findOne({ filename });
 
-    if (file) {
-        return res.status(400).send("This issue is already created");
-    }
+    // if (file) {
+    //     return res.status(400).send("This issue is already created");
+    // }
 
     try {
         const issue = await Issue.create({

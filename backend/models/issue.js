@@ -17,7 +17,6 @@ const IssueSchema = new mongoose.Schema({
     filename: {
         type: String,
         required: true,
-        unique: true,
         trim: true,
         min: 2,
         max: 20,
@@ -43,6 +42,7 @@ const IssueSchema = new mongoose.Schema({
     },
     link: {
         type: String,
+        required: false,
     },
 }, { timestaps: true })
 
